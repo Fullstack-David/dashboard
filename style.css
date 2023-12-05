@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.titel {
+  grid-column: 1 / span 5;
+  height: 100px;
+  display: flex;
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quick-links,
+.weather-report,
+.stock-market,
+.notes {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  grid-column: 1 / span 5;
+  height: 100px;
+  display: flex;
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.time-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 40%;
+  width: 200px;
+  background-color: lightgray;
+  border-radius: 30px;
+  padding: 3px 30px;
+  gap: 20px;
+}
+
+.change-background {
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: darkgray;
+  border-radius: 10px;
+  padding: 8px 15px;
+  border: none;
+  background-color: darkgray;
+  color: white;
+  width: 200px;
+  margin: 20px 40%;
+}
