@@ -24,7 +24,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
+.inputH1 {
+  display: hidden;
+}
+
 .quick-links,
 .weather-report,
 .stock-market,
