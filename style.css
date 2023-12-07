@@ -22,17 +22,16 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: fit-content;
   padding: 1rem;
   margin: 0 auto;
   border-radius: 10px;
 }
 #nameInput {
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: center;
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
   border-radius: 10px;
   border: 1px solid lightgray;
 }
@@ -52,6 +51,25 @@ html {
   align-items: center;
   background-color: lightgray;
 }
+.quick-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-links-button img {
+  display: flex;
+  align-self: center;
+  border-radius: 50%;
+  background-color: white;
+}
+.quick-links-button {
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  padding: 0.5rem 1rem;
+  gap: 5px;
+}
+
 .time-date {
   display: flex;
   justify-content: center;
