@@ -18,16 +18,20 @@ html {
 
 .titel {
   grid-column: 1 / span 5;
-  height: 100px;
-  display: flex;
   gap: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+
+  width: fit-content;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 10px;
 }
-.inputH1 {
-  display: hidden;
+#nameInput {
+  font-size: 2rem;
+  text-align: center;
+  border: none;
 }
 
 .quick-links,
