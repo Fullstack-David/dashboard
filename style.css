@@ -32,6 +32,9 @@ html {
   font-size: 2rem;
   text-align: center;
   border: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid lightgray;
 }
 
 .quick-links,
