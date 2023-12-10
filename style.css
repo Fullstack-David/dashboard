@@ -37,10 +37,11 @@ html {
 }
 
 .quick-links,
-.weather-report,
 .stock-market,
+.weather-report,
 .notes {
   border: 1px solid lightgray;
+  justify-content: center;
   border-radius: 10px;
   grid-column: 1 / span 5;
   height: auto;
