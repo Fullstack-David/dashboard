@@ -6,6 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  background-color: darkgrey;
+}
 
 .container {
   display: grid;
@@ -36,7 +39,6 @@ html {
   border: 1px solid lightgray;
 }
 
-.quick-links,
 .stock-market,
 .weather-report,
 .notes {
@@ -49,32 +51,30 @@ html {
   gap: 25px;
   text-align: center;
   background-color: lightgray;
+  padding-top: 10px;
+}
+.quick-links {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: lightgray;
+  gap: 25px;
+  text-align: center;
+  padding-top: 10px;
 }
 
-.quick-links {
-  display: flex;
-  flex-direction: column;
-}
 .quick-links input {
   border: none;
-  padding: 1rem;
-}
-
-.quick-links-button img {
-  display: flex;
-  align-self: center;
-  border-radius: 50%;
-  background-color: white;
-}
-.quick-links-button {
-  border: none;
-  cursor: pointer;
+  padding: 0.5rem;
   border-radius: 10px;
-  display: flex;
-  padding: 1rem;
-  gap: 5px;
 }
-
+.input-value {
+  border-radius: 10px;
+}
+#linkInput {
+  border: none;
+  width: 60%;
+  font-size: 1rem;
+}
 .time-date {
   display: flex;
   justify-content: center;
@@ -101,6 +101,24 @@ html {
   color: white;
   width: 200px;
   margin: 20px 30%;
+}
+
+/*---------- snabblänk CSS-style -----------------*/
+.quick-links {
+  display: flex;
+  flex-direction: column;
+}
+.ulList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-decoration: none;
+}
+.ulList a {
+  text-decoration: none;
+  padding: 1rem;
+  color: black;
 }
 
 @media (min-width: 768px) and (max-width: 2220px) {
