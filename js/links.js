@@ -36,6 +36,7 @@ linkInput.addEventListener('click', (e) => {
     if (linkValue !== '') {
         const li = document.createElement('li');
         const a = document.createElement('a');
+        
 
         a.href = linkValue;
         a.textContent = linkValue;
@@ -50,6 +51,7 @@ linkInput.addEventListener('click', (e) => {
         ulList.appendChild(li);
         linkInput.value = '';
     }
+    
 })
 
 
