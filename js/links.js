@@ -1,58 +1,55 @@
-
-const linkInput = document.querySelector('#linkInput');
-//const quickLinkButton = document.querySelector('.quick-links-button');
+const quickLinks = document.querySelector('.quick-links')
+const linkInput = document.getElementById('linkInput');
 const ulList = document.querySelector('.ulList');
-
 /*
+// click event 
 linkInput.addEventListener('click', (e) => {
-    const linkValue = linkInput.value;
-        
-    if (linkValue !== '') {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-
-        a.href = linkValue;
-        a.textContent = linkValue;
-        a.target = '_blank';
-
-        a.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.open(linkValue, '_blank');
-        });
-
-        li.appendChild(a);
-        ulList.appendChild(li);
-        linkInput.value = '';
-    }
+    addItem()
 });
 */
 
-linkInput.addEventListener('mouseout', (e) => {
-        // Hantera händelsen när musen går ut från linkInput här, om nödvändigt
-});
-linkInput.addEventListener('click', (e) => { 
-    const linkValue = linkInput.value;
-        
-    if (linkValue !== '') {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        
-
-        a.href = linkValue;
-        a.textContent = linkValue;
-        a.target = '_blank';
-
-        a.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.open(linkValue, '_blank');
-        });
-
-        li.appendChild(a);
-        ulList.appendChild(li);
-        linkInput.value = '';
+// Enter event 
+linkInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        addItem()
+        console.log(linkInput)
+    } else {
+        console.log('Error')
     }
-    
-})
+});
 
 
+
+function addItem() {
+
+    // skapar element inut min quick-link
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'X';
+
+
+    // ger mina element ett class namn
+    delBtn.className = 'delBtn';
+    a.className = 'link';
+    li.className = 'list-group-item';
+    a.href = linkInput.value;
+
+    // skall cärdet på li synas på skärmen
+    li.textContent = a.value;
+    //console.log(linkInput)
+    console.log(a);
+    a.textContent = linkInput.value;
+
+    //appendar
+    li.appendChild(delBtn);
+    ulList.appendChild(li);
+    li.appendChild(a);
     
+    // event på knappen 
+    delBtn.addEventListener('click', (e) => {
+        delBtn.parentElement.remove();
+    });
+}
+
+

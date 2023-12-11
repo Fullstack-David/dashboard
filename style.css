@@ -80,6 +80,7 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
   text-decoration: none;
 }
 .ulList a {
@@ -87,6 +88,10 @@ body {
   padding: 1rem;
   color: black;
   display: block;
+}
+.list-group-item {
+  display: flex;
+  background-color: aliceblue;
 }
 
 #linkInput {
