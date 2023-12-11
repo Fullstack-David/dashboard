@@ -9,16 +9,18 @@ html {
 body {
   background-color: darkgrey;
 }
-
+/* container CSS */
 .container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 1rem;
   width: 100%;
   height: 100vh;
 }
+/* punkt 1 CSS */
 .time-date {
+  /*grid-column: 1 / span 3;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,13 +31,10 @@ body {
   padding: 3px 30px;
   gap: 20px;
 }
+/* punkt 2 CSS */
 .titel {
-  grid-column: 1 / span 5;
+  grid-column: 1 / span 3;
   gap: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
   padding: 1rem;
   margin: 0 auto;
   border-radius: 10px;
@@ -61,26 +60,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-.change-background {
-  grid-column: 1 / span 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  background-color: darkgray;
-  border-radius: 10px;
-  padding: 8px 15px;
-  border: none;
-  background-color: darkgray;
-  color: white;
-  width: 200px;
-  margin: 20px 30%;
-}
-
-/*---------- snabblänk CSS-style -----------------*/
+/* punkt 3 CSS */
 
 .quick-links {
+  grid-column: 1 / span 3;
   border-radius: 10px;
   background-color: lightgray;
   gap: 25px;
@@ -89,6 +72,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding-left: 0;
 }
 .ulList {
   list-style-type: none;
@@ -115,8 +100,18 @@ body {
   margin: 0 auto;
 }
 
+/* punt 4 CSS */
+.weather-report {
+  grid-column: 1 / span 3;
+}
+/* punt 5 CSS */
+.stock-market {
+  grid-column: 1 / span 3;
+}
 /*------- punkt-6 ----------*/
-
+.notes {
+  grid-column: 1 / span 3;
+}
 .notes #note {
   background-color: aliceblue;
   min-width: 90%;
@@ -128,11 +123,30 @@ body {
   top: 0;
 }
 
+/* punkt 7 CSS */
+.change-background {
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px 15px;
+  border: none;
+  width: 200px;
+  margin: 20px 28%;
+}
+.change-background p {
+  color: black;
+}
 /* h2 */
 h2 {
   display: flex;
   text-align: center;
 }
+
+/*----- media query-------*/
 @media (min-width: 768px) and (max-width: 2220px) {
   .container {
     display: grid;
