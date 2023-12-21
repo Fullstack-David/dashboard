@@ -195,16 +195,22 @@ body {
 /*------- punkt-6 ----------*/
 .notes {
   grid-column: 1 / span 3;
+  border-radius: 10px;
+  background-color: lightgray;
+  gap: 25px;
+  text-align: center;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.notes #note {
+#userNotes {
   background-color: aliceblue;
-  min-width: 90%;
-  height: 75%;
   border-radius: 10px;
   border: none;
-  padding-top: 0;
-  position: relative;
-  top: 0;
+  padding: 10px;
+  line-height: 1.3rem;
+  font-size: 1.1rem;
 }
 
 /* punkt 7 CSS */
