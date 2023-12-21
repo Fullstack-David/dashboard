@@ -68,8 +68,8 @@ function displayLocal(link) {
      const li = document.createElement('li');
      const a = document.createElement('a');
      const delBtn = document.createElement('button');
-     delBtn.textContent = 'X';
- 
+     delBtn.textContent = '-';
+
      // ger mina element ett class namn    
      li.className = 'list-group-item';
      a.href = link;
