@@ -12,6 +12,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/*-- icon style --*/
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
+}
 /* container CSS */
 .container {
   display: grid;
@@ -33,46 +37,52 @@ body {
   border-radius: 30px;
   padding: 3px 30px;
   gap: 20px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(105, 6, 6, 0.2);
 }
 /* punkt 2 CSS */
 .titel {
   grid-column: 1 / span 3;
-  gap: 25px;
+  width: 100%;
   padding: 1rem;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
 }
 #nameInput {
-  font-size: 1rem;
+  font-size: 3rem;
   text-align: center;
   border: none;
   padding: 0.5rem 2rem;
   border-radius: 10px;
-  border: 1px solid lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  color: black;
 }
 
-.weather-report,
-.notes {
-  border-radius: 10px;
-  background-color: lightgray;
-  gap: 25px;
-  text-align: center;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 /* punkt 3 CSS */
-
 .quick-links {
   grid-column: 1 / span 3;
   border-radius: 10px;
   background-color: lightgray;
   gap: 25px;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+.inputBox {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
 }
 .ulList {
@@ -84,11 +94,8 @@ body {
 }
 .ulList a {
   text-decoration: none;
-  font-size: 1.3rem;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 30px;
+  font-size: 1rem;
+  padding: 10px 50px;
   color: black;
   display: block;
 }
@@ -97,20 +104,26 @@ body {
   background-color: aliceblue;
   border: none;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 .delBtn {
-  border: none;
-  background-color: aliceblue;
-  padding-right: 20px;
+  border: 1px solid darkgray;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 #linkInput {
   border: none;
   font-size: 1rem;
-  border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   border-radius: 10px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 
 /* punt 4 CSS */
@@ -125,6 +138,9 @@ body {
   padding-bottom: 20px;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 
 .weather-icon {
@@ -141,6 +157,9 @@ body {
   gap: 50px;
   width: 90%;
   height: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 .first h4,
 .second h4,
@@ -157,6 +176,9 @@ body {
   text-align: center;
   border-radius: 5px;
   padding: 5px 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 .weather-info {
   display: flex;
@@ -167,7 +189,9 @@ body {
 .bored-api {
   grid-column: 1 / span 3;
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 .header {
   text-align: center;
@@ -175,7 +199,6 @@ body {
   gap: 10px;
 }
 .header h2 {
-  justify-content: center;
   padding-bottom: 10px;
 }
 .boredInput {
@@ -200,6 +223,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
 #userNotes {
   background-color: aliceblue;
@@ -217,7 +243,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  background-color: rgb(235, 227, 227);
+
   border-radius: 10px;
   padding: 8px 15px;
   border: none;
@@ -226,9 +252,12 @@ body {
 }
 .change-background-btn {
   cursor: pointer;
+  padding: 8px 15px;
   border: none;
-  color: black;
-  background-color: rgb(235, 227, 227);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  color: white;
 }
 /* h2 */
 
@@ -271,6 +300,6 @@ body {
   .change-background {
     grid-column: 1 / span 4;
     height: 40px;
-    margin: 0 42%;
+    margin: 30% 42%;
   }
 }
