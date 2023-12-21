@@ -70,41 +70,38 @@ body {
   background-color: lightgray;
   gap: 25px;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  overflow: scroll;
-  border-radius: 10px;
 }
 .ulList {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  justify-content: space-between;
   gap: 10px;
 }
 .ulList a {
   text-decoration: none;
   font-size: 1.3rem;
-  padding: 10px 50px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
   color: black;
   display: block;
 }
 .list-group-item {
   display: flex;
   background-color: aliceblue;
-  gap: 10px;
   border: none;
   border-radius: 5px;
 }
 .delBtn {
   border: none;
   background-color: aliceblue;
-  padding-right: 5px;
-  border-radius: 5px;
+  padding-right: 20px;
 }
 
 #linkInput {
@@ -199,7 +196,7 @@ body {
   background-color: lightgray;
   gap: 25px;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
