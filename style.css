@@ -27,7 +27,7 @@ body {
 }
 /* punkt 1 CSS */
 .time-date {
-  /*grid-column: 1 / span 3;*/
+  grid-column: 1 / span 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,6 @@ body {
 /* punkt 2 CSS */
 .titel {
   grid-column: 1 / span 3;
-  width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -49,10 +48,10 @@ body {
   border-radius: 10px;
 }
 #nameInput {
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
@@ -255,7 +254,7 @@ body {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  color: white;
+  color: black;
 }
 .backgrundImg {
   cursor: pointer;
@@ -264,7 +263,6 @@ body {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  color: white;
 }
 
 /*----- media query-------*/
