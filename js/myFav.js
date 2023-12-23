@@ -16,7 +16,7 @@ fetch(url)
         let link = data.link;
         let aLink;
 
-        console.log("Data: ", data);
+        //console.log("Data: ", data);
 
         if (link === '') {
             aLink = ''
