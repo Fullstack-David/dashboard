@@ -15,8 +15,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}`;
     const changeBackground = document.querySelector('.change-background');
     const changeBackgroundBtn = document.querySelector('.change-background-btn');
+    const backgrundImg = document.querySelector('.backgrundImg');
 
+    // EventListener på min knapp
     changeBackgroundBtn.addEventListener('click', function () {
+        
+        fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');                
+            }
+            return response.json();             
+        })
+        .then(data => {
+            console.log(data)
+            const imgUrl = data.urls.regular;
+            document.body.style.backgroundImage = `url(${ imgUrl })`;
+               
+            console.log(imgUrl)
+        })
+        .catch(error => console.error('Error:', error));
+    })
+
+    // EventListener på min reload image
+    backgrundImg.addEventListener('click', function () {
         
         fetch(apiUrl)
         .then(response => {

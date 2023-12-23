@@ -1,12 +1,21 @@
 const quickLinks = document.querySelector('.quick-links')
 const linkInput = document.getElementById('linkInput');
 const ulList = document.querySelector('.ulList');
+const materialSymbolsOutlined = document.querySelector('.material-symbols-outlined');
+
 
 // Enter event 
 linkInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         addItem();       
     } 
+});
+
+// Event på min span(add)
+materialSymbolsOutlined.addEventListener('click', (e) => {
+    let fastLinks = JSON.parse(localStorage.getItem('link'));
+    addItem(); 
+    
 });
 
 /* Lyssna på när dokumentet är helt laddat och 
