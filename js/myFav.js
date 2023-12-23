@@ -1,4 +1,4 @@
-let url = 'http://www.boredapi.com/api/activity?type=recreational';
+let url = 'https://www.boredapi.com/api/activity?type=recreational';
 
 fetch(url)
     .then(response => {
