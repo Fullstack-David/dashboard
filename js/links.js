@@ -26,11 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function getquickLinks() {
-    let fastLinks = JSON.parse(localStorage.getItem('link'));
+    let fastLinks = JSON.parse(localStorage.getItem('link')); //hämtar från locakStorage med nyckenl 'link'
+    if (fastLinks !== null) {
+        fastLinks.forEach(link => {
+            displayLocal(link); // anropar displayLocal funktionen för varje länk
+        }); 
+    } else {
+        console.error('Ingen data med nyckeln "link" i localStorage');
+    }
     
-    fastLinks.forEach(link => {
-        displayLocal(link);
-    });  
 }
 
 linkList = [];
