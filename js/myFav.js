@@ -16,8 +16,6 @@ fetch(url)
         let link = data.link;
         let aLink;
 
-        //console.log("Data: ", data);
-
         // Om länken är tom, sätt aLink till en tom sträng, annars skapa en länk
         if (link === '') {
             aLink = ''

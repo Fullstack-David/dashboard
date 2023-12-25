@@ -19,7 +19,7 @@ function setDate() {
     const year = today.getFullYear();
     const month = today.getMonth();
     const day = today.getDate();
-    date.innerHTML = `${year}-${monthNames[month]}-${day}`;
+    date.innerHTML = `${day} ${monthNames[month]} ${year}`;
 }
 
 setInterval(setTime, 1000); // sätter min setTime function i en interval så att den uppdateras varje sekund.

@@ -73,8 +73,7 @@ function displayWeather(lat, lon) {
                     <p>${datas.day.condition.text}</p>
                 </div>
                 </div>
-            </div>                                            
-        
+            </div>                                                    
         `
         }
     })

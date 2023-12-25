@@ -63,6 +63,7 @@ function addItem() {
     // tömmer input efetr att användaren har skrivit 
     linkInput.value = ''; 
 }
+
 // Funktion för att visa en tidigare sparad länk
 function displayLocal(link) {
      // skapar element inut min quick-link
