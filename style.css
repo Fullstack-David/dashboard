@@ -262,7 +262,7 @@ body {
   padding: 15px;
   border: none;
 }
-/*------- -----------------*/
+/*------- media query -----------------*/
 @media (min-width: 500px) and (max-width: 900px) {
   .container {
     display: grid;
@@ -309,7 +309,7 @@ body {
     grid-column: 1 / span 4;
   }
 }
-/*----- media query-------*/
+/*----- media query -------*/
 @media (min-width: 900px) and (max-width: 2220px) {
   .container {
     display: grid;

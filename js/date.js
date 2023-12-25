@@ -14,10 +14,12 @@ function setTime() {
 function setDate() {    
     const today = new Date();
     // hämtar year, month, day från data-objektet 'today' och sparar de i varsin variabel.
+    const monthNames = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'december']
+    
     const year = today.getFullYear();
     const month = today.getMonth();
     const day = today.getDate();
-    date.innerHTML = `${year}-${month}-${day}`;
+    date.innerHTML = `${year}-${monthNames[month]}-${day}`;
 }
 
 setInterval(setTime, 1000); // sätter min setTime function i en interval så att den uppdateras varje sekund.

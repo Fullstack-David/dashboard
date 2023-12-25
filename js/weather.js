@@ -1,20 +1,22 @@
-/* Example 1: Fetching Weather Data */
-
+// Hämta användarens geografiska position
 navigator.geolocation.getCurrentPosition(function (position) {
     
+    // Extrahera latitud och longitud från position
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;   
     displayWeather(lat ,lon)
     
 });
 
-
+// Hämtar referensen till DOM-elementet
 const weatherReport = document.querySelector('.weather-report');
 
+// Funktion för att visa väderinformation baserat på givna koordinater
 function displayWeather(lat, lon) {
     const apiKey = '0f6869a37d6f4d38b7d111034230912';
     const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${lon}&days=3&aqi=no&alerts=no`;
 
+    // Hämtar värderna från API
     fetch(apiUrl)
     .then(response => {
         if (!response.ok) {
@@ -24,6 +26,7 @@ function displayWeather(lat, lon) {
     })
     .then(data => {
         
+        // Extrahera datum och ikon för aktuellt väder
         const dateDays = data.forecast.forecastday.map(day => day.date_epoch * 1000);
         const currebtData = data.current.condition.icon;
 
@@ -44,17 +47,20 @@ function displayWeather(lat, lon) {
             </div>
             `;
         
+        // Skapar en for-loop för de två kommande dagarna och lägegr till de i information i HTML
         for (let i = 1; i < 3; i++) {
             let day = '';
             let titel = '';
             const datas = data.forecast.forecastday[i];
+
+            // Ger mina två kommande dagarna varsit kalss namn
             if (i === 1) {
                 day = 'second';
                 titel = 'Imorgon'
             
             } else if (i === 2) {
                 day = 'third';
-                titel = 'Dag tre'
+                titel = 'Fredag'
                 
             }
             weatherReport.innerHTML += `

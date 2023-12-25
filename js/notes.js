@@ -1,14 +1,14 @@
 //localStorage.setItem('link', JSON.stringify(linkList));
-let notes = document.querySelector('.notes');
 let userNotes = document.getElementById('userNotes')
 
-let test = JSON.parse(localStorage.getItem('userNotes'));
-userNotes.value = test;
+// Försök hämta användarens anteckningar från localStorage
+let storeNotes = JSON.parse(localStorage.getItem('userNotes'));
+userNotes.value = storeNotes;
 
 // Försök att hämta befintliga anteckningar från localStorage
 let noteStorage = JSON.parse(localStorage.getItem(''));
 
-// Funktion för att spara anteckningar till localStorage
+// Funktion för att spara användarens anteckningar till localStorage
 function saveNote() {
     localStorage.setItem('userNotes', JSON.stringify(noteStorage));
 

@@ -12,36 +12,25 @@ linkInput.addEventListener('keypress', (e) => {
 });
 
 // Event på min span(add)
-materialSymbolsOutlined.addEventListener('click', (e) => {
-    let fastLinks = JSON.parse(localStorage.getItem('link'));
-    addItem(); 
-    
-});
+materialSymbolsOutlined.addEventListener('click', addItem);
 
 /* Lyssna på när dokumentet är helt laddat och 
 redo för manipulation med JavaScript */
-
-document.addEventListener('DOMContentLoaded', function () {
-    getquickLinks();
-});
-
-function getquickLinks() {
-    let fastLinks = JSON.parse(localStorage.getItem('link')); //hämtar från locakStorage med nyckenl 'link'
-    if (fastLinks !== null) {
-        fastLinks.forEach(link => {
-            displayLocal(link); // anropar displayLocal funktionen för varje länk
-        }); 
-    } else {
-        console.error('Ingen data med nyckeln "link" i localStorage');
-    }
-    
-}
+document.addEventListener('DOMContentLoaded', getquickLinks);
 
 linkList = [];
 
+// Funktion för att ladda tidigare sparade länkar
+function getquickLinks() {
+    let linkList = JSON.parse(localStorage.getItem('link')) || []; // Försöker hämta länkar från localStorage, annars sätt till en tom array
+   
+    linkList.forEach(displayLocal); // visa varje sparade länk på sidan          
+}
+
+// Funktion för att lägga till en ny länk
 function addItem() {
 
-    // skapar element inut min quick-link
+    // skapar DOM-element för länken
     const li = document.createElement('li');
     const a = document.createElement('a');
     const delBtn = document.createElement('button');
@@ -67,15 +56,14 @@ function addItem() {
         delBtn.parentElement.remove();
     });
     
+    // Lägg till länken i arrayen och uppdatera localStorage
     linkList.push(linkInput.value);
-
-    // localStorage
     localStorage.setItem('link', JSON.stringify(linkList));
     
-    // tömmer input
+    // tömmer input efetr att användaren har skrivit 
     linkInput.value = ''; 
 }
-
+// Funktion för att visa en tidigare sparad länk
 function displayLocal(link) {
      // skapar element inut min quick-link
      const li = document.createElement('li');
@@ -98,11 +86,11 @@ function displayLocal(link) {
      li.appendChild(a);
      li.appendChild(delBtn);
      
-     // event på knappen 
+    // Lägg till klick-händelser för att ta bort länk och uppdatera localStorage
     delBtn.addEventListener('click', (e) => {
         delBtn.parentElement.remove();
         linkList = JSON.parse(localStorage.getItem('link'));
-        console.log(linkList)
+        //console.log(linkList)
         linkList = linkList.filter((link) => {
             return link !== e.target.value;            
         });

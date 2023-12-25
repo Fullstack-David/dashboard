@@ -2,10 +2,10 @@ let url = 'https://www.boredapi.com/api/activity?type=recreational';
 
 fetch(url)
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok.');                
+        if (!response.ok) { // kontrollerar om svaret är ok
+            throw new Error('Network response was not ok.'); // kasta ett fel om svaret inte är ok            
         }
-        return response.json();             
+        return response.json(); // Returnera JSON-data om svaret är ok            
     })
     .then(data => {
         const boredApi = document.querySelector('.bored-api');
@@ -18,12 +18,14 @@ fetch(url)
 
         //console.log("Data: ", data);
 
+        // Om länken är tom, sätt aLink till en tom sträng, annars skapa en länk
         if (link === '') {
             aLink = ''
         } else {
             aLink = `<p><strong></strong><a href="${link}">Klick here to see how its work!</a></p>`
         }
 
+        // Uppdatera HTML för DOM-elementet med klassen 'bored-api'
         boredApi.innerHTML = `
         <div class = 'header'>
             <h2>The Bored API</h2>
@@ -38,11 +40,11 @@ fetch(url)
         `
         
     })
-/*
+
     .catch(error => {
         console.error('Error', error);
     })
-*/   
+  
 
 
 
