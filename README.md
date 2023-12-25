@@ -9,3 +9,5 @@ Mina styrkor och utvecklingsområden i denna uppgift låg i min generella kunska
 Local storage för weather API var särskilt utmanande. Först använde jag en string interpolation för alla dagar, vilket resulterade i samma väderprognos för alla tre dagarna – vilket självklart inte var önskat. För första dagen visades 'current', och för de två kommande dagarna skapade jag varsin klass och ändrade egenskapen så att de visade prognosen för de två följande dagarna med hjälp av en for-loop och if-sats.
 
 I alla mina fetch-anrop använde jag `.then` och `.catch` metoden. Inte för att imponera på någon, utan helt enkelt för att det var enklare än `async/await`. Jag kommer självklart att lära mig det också.
+
+Dashborden är anpassat till mobil, Ipad och dator.

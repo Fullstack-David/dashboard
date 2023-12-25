@@ -307,6 +307,10 @@ body {
   }
   .change-background {
     grid-column: 1 / span 4;
+    color: white;
+  }
+  .change-background-btn button {
+    color: white;
   }
 }
 /*----- media query -------*/
