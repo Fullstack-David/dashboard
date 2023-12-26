@@ -4,14 +4,14 @@ const ulList = document.querySelector('.ulList');
 const materialSymbolsOutlined = document.querySelector('.material-symbols-outlined');
 
 
-// Enter event 
+// Enter EventListener 
 linkInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         addItem();       
     } 
 });
 
-// Event på min span(add)
+// EventListener på min span(add)
 materialSymbolsOutlined.addEventListener('click', addItem);
 
 /* Lyssna på när dokumentet är helt laddat och 

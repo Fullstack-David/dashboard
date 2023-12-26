@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const changeBackgroundBtn = document.querySelector('.change-background-btn');
     const backgrundImg = document.querySelector('.backgrundImg');
 
-
+    // Funktion för att sätta standardbakgrundsbild på webbsidan.
     function setDefaultBackground() {
         const setDefaultBackgroundUrl = './assets/bg.jpg';
         document.body.style.backgroundImage = `url(${setDefaultBackgroundUrl})`
     }
 
 
-
+    // Funktion för att hämta bakgrundsbild från en API och sätta den som webbsidans bakgrund.
     function fetchAndSetBackground() {
     
         // Fetchar min url
@@ -31,27 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error:', error)); // Om något inte funkar så fångar jag den med catch-funktion
     };
 
-    // EventListener på min reload image
-    /*
-    function setDefaultBackground() {
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok.');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data)
-                const imgUrl = data.urls.regular;
-                document.body.style.backgroundImage = `url(${imgUrl})`;
-               
-                console.log(imgUrl)
-            })
-            .catch(error => console.error('Error:', error));
-    }
-    */
     setDefaultBackground();
+
+
     changeBackgroundBtn.addEventListener('click', fetchAndSetBackground);
     backgrundImg.addEventListener('click', fetchAndSetBackground)   
 })
