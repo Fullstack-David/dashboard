@@ -2,9 +2,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const apiKey = 'zssxLbwBAssRvlJa066O2P40u9brHdNtHQfY3oqAQjg';
     const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}`;
-    const changeBackground = document.querySelector('.change-background');
+    //const changeBackground = document.querySelector('.change-background');
     const changeBackgroundBtn = document.querySelector('.change-background-btn');
-    const backgrundImg = document.querySelector('.backgrundImg');
+    const refreshBtn = document.querySelectorAll('.material-symbols-outlined')[1];
 
     // Funktion för att sätta standardbakgrundsbild på webbsidan.
     function setDefaultBackground() {
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     changeBackgroundBtn.addEventListener('click', fetchAndSetBackground);
-    backgrundImg.addEventListener('click', fetchAndSetBackground)   
+    refreshBtn.addEventListener('click', fetchAndSetBackground) 
+    
 })
 
 

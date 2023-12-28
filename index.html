@@ -18,16 +18,22 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap"
       rel="stylesheet"
     />
-    <!-- icon font -->
+
+    <!-- Min browser favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon2.ico"
+      type="image/x-icon"
+    />
+    <!-- Hämtar icon font -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
 
     <link
-      rel="shortcut icon"
-      href="./assets/favicon2.ico"
-      type="image/x-icon"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
   </head>
   <body>
@@ -42,8 +48,7 @@
       <div class="titel">
         <input
           type="text"
-          class="name-input"
-          id="nameInput"
+          class="name-input hidden"
           placeholder="DJohn Doe Dashboard"
         />
       </div>
@@ -71,13 +76,13 @@
         <textarea
           name="userNotes"
           id="userNotes"
-          cols="21"
+          cols="28"
           rows="12"
         ></textarea>
       </div>
       <!-- punkt-7 -->
       <div class="change-background">
-        <img src="./assets/reload.png" alt="" class="backgrundImg" />
+        <span class="material-symbols-outlined"> refresh </span>
         <button class="change-background-btn">Slumpa ny backgrund</button>
       </div>
     </div>

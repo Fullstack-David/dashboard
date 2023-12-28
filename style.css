@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border-radius: 10px;
 }
 html {
   scroll-behavior: smooth;
@@ -14,12 +15,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/*-- google-icon style  (+) --*/
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 10;
-  padding-left: 20px;
-  cursor: pointer;
-}
+
 /*--- container CSS ---*/
 .container {
   display: grid;
@@ -44,29 +40,30 @@ body {
 }
 /*--- punkt 2 CSS ---*/
 .titel {
+  user-select: none;
   grid-column: 1 / span 3;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
 }
-#nameInput {
-  font-size: 1.5rem;
+.name-input {
+  font-size: 2rem;
   text-align: center;
   border: none;
   padding: 0.5rem;
-  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  color: black;
+}
+
+.hidden {
+  background: none;
 }
 
 /*--- punkt 3 CSS ---*/
 .quick-links {
   grid-column: 1 / span 3;
-  border-radius: 10px;
   background-color: lightgray;
   gap: 25px;
   text-align: center;
@@ -79,9 +76,14 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
+/*-- google-icon style  (+) --*/
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 10;
+  padding-left: 20px;
+  cursor: pointer;
+}
 .inputBox {
   background-color: white;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -105,7 +107,6 @@ body {
   display: flex;
   background-color: aliceblue;
   border: none;
-  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
@@ -116,21 +117,19 @@ body {
   width: 15px;
   border-radius: 50%;
   position: absolute;
-  right: 0;
+  inset: 5px 5px auto auto;
   cursor: pointer;
 }
 
 #linkInput {
   border: none;
   padding: 0.5rem 0;
-  border-radius: 10px;
 }
 
 /*--- punt 4 CSS ---*/
 .weather-report {
   grid-column: 1 / span 3;
   display: flex;
-  border-radius: 10px;
   background-color: lightgray;
   gap: 10px;
   text-align: center;
@@ -150,7 +149,6 @@ body {
 .first,
 .second,
 .third {
-  border-radius: 10px;
   padding-top: 10px;
   display: flex;
   background-color: white;
@@ -188,7 +186,6 @@ body {
 /*--- punt 5 CSS ---*/
 .bored-api {
   grid-column: 1 / span 3;
-  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(50px);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
@@ -215,7 +212,6 @@ body {
 /*--- punkt-6 ---*/
 .notes {
   grid-column: 1 / span 3;
-  border-radius: 10px;
   background-color: lightgray;
   gap: 25px;
   text-align: center;
@@ -229,11 +225,9 @@ body {
 }
 #userNotes {
   background-color: aliceblue;
-  border-radius: 10px;
   border: none;
   padding: 10px;
   line-height: 1.3rem;
-  font-size: 1.1rem;
 }
 
 /*--- punkt 7 CSS ---*/
@@ -243,7 +237,7 @@ body {
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 15px;
+
   margin: 0 auto;
   backdrop-filter: blur(50px);
   background-color: rgba(255, 255, 255, 0);
@@ -257,34 +251,34 @@ body {
   background-color: rgba(255, 255, 255, 0);
   color: black;
 }
-.backgrundImg {
+/*-- google-icon style  refresh-symbolen --*/
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   cursor: pointer;
-  padding: 15px;
-  border: none;
 }
+
 /*--- media query ----*/
 @media (min-width: 500px) and (max-width: 900px) {
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 100px 100px 350px 350px 50px;
-    width: 100;
+    width: 100%;
   }
   .time-date {
     grid-column: 1 / span 4;
     height: 50px;
     gap: 50px;
     margin: 0 auto;
-    width: 50%;
   }
   .titel {
     grid-column: 1 / span 4;
     height: 0;
     margin: 40px auto;
   }
-  #nameInput {
+  .name-input {
     font-size: 2rem;
-    padding: 1rem 5rem;
+    font-weight: 700;
   }
 
   .quick-links {
@@ -307,10 +301,6 @@ body {
   }
   .change-background {
     grid-column: 1 / span 4;
-    color: white;
-  }
-  .change-background-btn button {
-    color: white;
   }
 }
 /*--- media query ---*/
@@ -325,20 +315,16 @@ body {
     grid-column: 1 / span 4;
     height: 50px;
     gap: 50px;
-    margin: 0 38%;
+    margin: 0 auto;
   }
   .titel {
     grid-column: 1 / span 4;
     height: 0;
     margin-bottom: 0;
+    margin-top: 90px;
   }
 
-  .titel {
-    margin-top: 100px;
-    margin-bottom: 10px;
-    height: 0;
-  }
-  #nameInput {
+  .name-input {
     padding: 0.5rem 5rem;
     font-size: 3rem;
   }
