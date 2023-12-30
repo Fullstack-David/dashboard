@@ -22,74 +22,79 @@ document.addEventListener('DOMContentLoaded', () => {
     getLinksFromLocalStorage();
 });
 
-addLinkBtn.addEventListener('click', () => {
-    addLinkBtn.style.display = 'none'
+button.addEventListener('click', () => {
     urlInput.style.display = 'block';
     urlInput.focus();
 });
 
 urlInput.addEventListener('keydown', (e) => {
-    
     if (e.key === 'Enter') {
-        try {
-            const inputUrl = new URL(urlInput.value);           
-            urlInput.style.display = 'none'
-            urlName.style.display = 'block';
-            urlName.focus();  
-        } catch (error) {
-            alert("Felaktigt format på URL:en");
-            
-            
-        }
-             
-    }   
+        urlName.style.display = 'block';
+        urlName.focus();
+    }
 });
+/*
+function simulateEnterKeyPress(element) {
+    const event = new KeyboardEvent('keydown', { key: 'Enter' });
+    element.dispatchEvent(event);
+}
+*/
+
+/** 
+ *  skapar en 'Enter' eventlistener för min urlName
+ * skapar en name-variabeln och tilldelar värdet av urlName.value
+ * om 'name' är inte tom
+ * visa: 
+ * funktionen 'saveLinks' med två argument: urlInput och name
+ * funktionen 'displayLink' med två argument: urlInput och name
+ * funktionen 'resetInputs'
+*/
 
 urlName.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter') return;
-   
-    const name = urlName.value;
 
+    const name = urlName.value;
     if (name !== '') {
-        
         saveLink(urlInput.value, name);
         displayLink(urlInput.value, name);
         resetInputs();
-        urlName.style.display = 'none'
-        urlInput.style.display = 'none'
-    
+        //getLink(urlInput.value, name)
     } 
-})
+   
+});
 
+/**
+ * skapar en saveLiink funktionen ocg tilldelar 2 argument 'url och name'
+ *  pushar in en ny element i min links som är en global variabel med en tom array
+ * sätter mina länkar som en sträng i localStorage
+*/ 
 // saveLink sparar en länk (URL och namn) i local storage och i minnet (links-array)
 function saveLink(url, name) {
-    if (isValidInput(url, name)){
-        links.push({ link: url, name: name });
-        localStorage.setItem('links', JSON.stringify(links));
-        addLinkBtn.style.display = 'block';
-        addLinkBtn.style.display = 'flex';
-    } else {
-        alert("Ange korrekt URL och/eller ett namn.");
-    }
- 
-    
+    //if (!url.match(/^(https?:\/\/)?[a-z0-9-]+(\.[a-z0-9-]+)*(\/[a-z0-9-]+)?$/)) {
+        //alert("Ange en giltig URL.");
+        //return;
+    //}
+    links.push({ link: url, name: name });
+    localStorage.setItem('links', JSON.stringify(links));
 }
 
-function isValidInput(url, name) {
-    return url !== '' && name !== ''
-}
-
-
+/**
+ * skapar displayLink funktionen och tilldelar jag den två parameter 
+ * den ena är url() och den andra är name(urlName.value)
+ * skapar min linkElement variabel och skapar en 'div'
+ * ger min div ett class-namn
+ * inuti min div(linkElement) skapar jag innerHTML a-tagg och en span
+ * tilldelar url till href och namnet som användaren anger till a-taggen
+ * sedan appendar jag diven(linkElement) till sin förälder linkContainer(shortcut-links)
+ */
 // displayLink skapar och visar en länk i DOM baserat på URL och namn
 function displayLink(url, name) {
     const linkElement = document.createElement('div');
     linkElement.classList.add('link');
     linkElement.innerHTML = `
-    <li class="listElement">
         <a href="${url}" target="_blank">${name}</a>
-        <span class="close material-symbols-outlined md-15" data-id="${url}" id="deleteBtn">do_not_disturb_on</span>
-    </li>
-        `;
+        <span class="close material-symbols-outlined md-15" data-id="${url}">do_not_disturb_on</span>
+    `;
     linkContainer.appendChild(linkElement);
 }
 
@@ -105,10 +110,17 @@ function resetInputs() {
     urlName.value = '';
 
 }
+// Händelselyssnare för att visa/dölja inputs när knappen klickas
+addLinkBtn.addEventListener('click', () => {
+    
+    addLinkBtn.remove()
+});
+
+
+
 // Händelselyssnare för att ta bort en länk när stängknappen klickas
 linkContainer.addEventListener('click', (e) => {
     if (e.target.classList.contains('close')) {
         removeLink(e.target.getAttribute('data-id'));
     }
 });
-//localStorage.clear()

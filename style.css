@@ -62,10 +62,12 @@ body {
 }
 
 /*--- punkt 3 CSS ---*/
-.quick-links {
+
+.shortcut-links {
   grid-column: 1 / span 3;
+
   background-color: lightgray;
-  gap: 25px;
+  gap: 10px;
   text-align: center;
   padding: 10px;
   display: flex;
@@ -74,56 +76,72 @@ body {
   padding-bottom: 10px;
   backdrop-filter: blur(50px);
   background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
 }
+
 /*-- google-icon style  (+) --*/
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 10;
-  padding-left: 20px;
+  padding-left: 15px;
   cursor: pointer;
 }
-.inputBox {
-  background-color: white;
+
+.add-link-btn {
+  margin-top: 1rem;
+  border: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
+  padding: 0.3rem 0.8rem 0.3rem 0;
+  cursor: pointer;
 }
-
-.ulList {
-  list-style-type: none;
+.input-container {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
   gap: 10px;
 }
-.ulList a {
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 10px 50px;
-  color: black;
-  display: block;
+
+.url-name,
+.url-input {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
-.list-group-item {
+.link {
   display: flex;
   background-color: aliceblue;
-  border: none;
+  width: 80%;
+}
+.link a {
+  display: flex;
+  float: left;
+  text-decoration: none;
+  color: black;
+}
+.link span {
+  display: flex;
+  position: relative;
+}
+#deleteBtn {
+  font-size: 16px;
+  inset: 0 5px auto auto;
+  position: absolute;
+}
+#plusSymbole {
+  font-size: 19px;
+}
+.listElement {
+  display: flex;
+  padding: 10px 50px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-}
-.delBtn {
-  border: 1px solid darkgray;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  position: absolute;
-  inset: 5px 5px auto auto;
-  cursor: pointer;
-}
-
-#linkInput {
-  border: none;
-  padding: 0.5rem 0;
 }
 
 /*--- punt 4 CSS ---*/
@@ -281,7 +299,7 @@ body {
     font-weight: 700;
   }
 
-  .quick-links {
+  .shortcut-links {
     grid-column: 1 / span 2;
   }
   .ulList {
@@ -328,7 +346,7 @@ body {
     padding: 0.5rem 5rem;
     font-size: 3rem;
   }
-  .quick-links {
+  .shortcut-links {
     grid-column: 1 / span 1;
   }
   .ulList {
