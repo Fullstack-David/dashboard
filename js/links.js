@@ -2,6 +2,7 @@ const linkContainer = document.querySelector('.shortcut-links');
 const addLinkBtn = document.querySelector('.add-link-btn');
 const urlInput = document.querySelector('.url-input');
 const urlName = document.querySelector('.url-name');
+const linkElementParent = document.getElementById('linkElement-parent');
 let links = [];
 
 
@@ -90,7 +91,7 @@ function displayLink(url, name) {
         <span class="close material-symbols-outlined md-15" data-id="${url}" id="deleteBtn">do_not_disturb_on</span>
     </li>
         `;
-    linkContainer.appendChild(linkElement);
+    linkElementParent.appendChild(linkElement);
 }
 
 // removeLink tar bort en länk från local storage och från DOM baserat på URL
