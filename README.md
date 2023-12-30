@@ -11,3 +11,7 @@ Local storage för weather API var särskilt utmanande. Först använde jag en s
 I alla mina fetch-anrop använde jag `.then` och `.catch` metoden. Inte för att imponera på någon, utan helt enkelt för att det var enklare än `async/await`. Jag kommer självklart att lära mig det också.
 
 Dashborden är anpassat till mobil, Ipad och dator.
+
+Jag hade velat göra VG-delen med. Att kunna hämta favicon till mina länkar, att låta användaren välja en backgrunds motiv eller att låta användaren välja vilken stadsväder vill de kolla på. Tyvärr har jag inte hunnit med det. Jag ville bli klar med G-delen först och sedan gå över till VG.
+
+Jag är nöjd med min prestation men det kan alltid bli bättre. Förhoppnigsvis om ett par månader kollar jag tillbaks och tänker 'denna uppgift var jätteenkelt'.
