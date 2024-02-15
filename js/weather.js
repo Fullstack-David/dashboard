@@ -60,7 +60,7 @@ function displayWeather(lat, lon) {
             
             } else if (i === 2) {
                 day = 'third';
-                titel = 'Third day'
+                titel = 'Next day'
                 
             }
             weatherReport.innerHTML += `
