@@ -24,38 +24,45 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 addLinkBtn.addEventListener('click', () => {
-    addLinkBtn.style.display = 'none'
-    urlInput.style.display = 'block';
-    urlInput.focus();
+    addLinkBtn.style.display = 'none'; // När 'addLinkBtn' klickas, sätts dess display-egenskap till 'none', vilket gömmer knappen från användargränssnittet.
+
+    urlInput.style.display = 'block';  // Sätter 'urlInput' elementets display-egenskap till 'block', vilket gör att inputfältet visas för användaren.
+
+    urlInput.focus(); // Sätter fokus på 'urlInput' elementet, vilket gör att användaren direkt kan börja skriva in en URL utan att behöva klicka i fältet först.
 });
 
 urlInput.addEventListener('keydown', (e) => {
     
     if (e.key === 'Enter') {
         try {
+            // Försöker skapa en ny URL-instans med värdet från 'urlInput'.
+            // Detta är ett sätt att validera URL:en. Om värdet inte är en giltig URL,
+            // kommer konstruktorn att kasta ett undantag.
             const inputUrl = new URL(urlInput.value);           
             urlInput.style.display = 'none'
             urlName.style.display = 'block';
             urlName.focus();  
         } catch (error) {
-            alert("Felaktigt format på URL:en");
-            
-            
-        }
-             
+            alert("Felaktigt format på URL:en");           
+        }            
     }   
 });
 
 urlName.addEventListener('keydown', (e) => {
     if (e.key !== 'Enter') return;
    
-    const name = urlName.value;
+    const name = urlName.value; // Hämtar värdet (namnet) som användaren har angivit i 'urlName' input-fältet.
 
+// Kontrollerar om det angivna namnet inte är en tom sträng.
     if (name !== '') {
-        
+        // Om namnet är giltigt (inte tomt), anropas funktionen 'saveLink' med
+        // URL:en från 'urlInput' och det angivna namnet som argument.
+        // Detta antyder att länken (URL:en) och dess namn sparas på något sätt, kanske i en databas eller lokal lagring.
         saveLink(urlInput.value, name);
-        displayLink(urlInput.value, name);
-        resetInputs();
+        displayLink(urlInput.value, name);// Anropar funktionen 'displayLink' med URL:en och namnet som argument.
+        resetInputs(); // Anropar funktionen resetInput som rensar fältet.
+
+        // döljer urlName och urlInput och återställs inför nästa inmatning.
         urlName.style.display = 'none'
         urlInput.style.display = 'none'
     
@@ -65,17 +72,17 @@ urlName.addEventListener('keydown', (e) => {
 // saveLink sparar en länk (URL och namn) i local storage och i minnet (links-array)
 function saveLink(url, name) {
     if (isValidInput(url, name)){
-        links.push({ link: url, name: name });
+        links.push({ link: url, name: name }); // Om inmnatningen är giltig, läggs ett nytt objekt med 'url' och 'namn' till arrayen 'links'
+        
         localStorage.setItem('links', JSON.stringify(links));
-        addLinkBtn.style.display = 'block';
+        // addLinkBtn.style.display = 'block';
         addLinkBtn.style.display = 'flex';
     } else {
         alert("Ange korrekt URL och/eller ett namn.");
-    }
- 
-    
+    }   
 }
 
+// Retunerar 'true' om url och namn är inte tomma strängar.
 function isValidInput(url, name) {
     return url !== '' && name !== ''
 }

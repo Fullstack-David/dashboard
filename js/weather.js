@@ -38,7 +38,7 @@ function displayWeather(lat, lon) {
             <div class="first">
                 <img src= ${currebtData} class='weather-icon'/>
                 <div class = 'weather-info'>
-                    <h4>Idag</h4>  
+                    <h4>Today</h4>  
                     <div class='current-weather'>
                         <p>${data.current.temp_c}°C</p>
                         <p>${data.current.condition.text}</p>
@@ -56,11 +56,11 @@ function displayWeather(lat, lon) {
             // Ger mina två kommande dagarna varsit kalss namn
             if (i === 1) {
                 day = 'second';
-                titel = 'Imorgon'
+                titel = 'Tomorrow'
             
             } else if (i === 2) {
                 day = 'third';
-                titel = 'Fredag'
+                titel = 'Third day'
                 
             }
             weatherReport.innerHTML += `
