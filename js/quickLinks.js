@@ -1,10 +1,24 @@
+// quickLinks.js
 const linkContainer = document.querySelector('.shortcut-links');
 const addLinkBtn = document.querySelector('.add-link-btn');
 const urlInput = document.querySelector('.url-input');
 const urlName = document.querySelector('.url-name');
 const linkElementParent = document.getElementById('linkElement-parent');
+const faviconDisplay = document.getElementById('faviconDisplay');
 let links = [];
 
+function getFavicon(url) {
+    const faviconUrl1 = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}`;
+    return faviconUrl1;
+
+}
+
+function updateIconDisplay() {
+    const urlInput = document.getElementById('urlInput').value;
+    const faviconUrl1 = getFavicon(urlInput)
+
+    document.getElementById('faviconDisplay').src = faviconUrl1;
+}
 
 // Funktionen för att hämta länkar från local storage
 function getLinksFromLocalStorage() {
@@ -75,8 +89,8 @@ function saveLink(url, name) {
         links.push({ link: url, name: name }); // Om inmnatningen är giltig, läggs ett nytt objekt med 'url' och 'namn' till arrayen 'links'
         
         localStorage.setItem('links', JSON.stringify(links));
-        // addLinkBtn.style.display = 'block';
-        addLinkBtn.style.display = 'flex';
+        // addLinkBtn.style.display = 'block'; 
+        addLinkBtn.style.display = 'flex'; 
     } else {
         alert("Ange korrekt URL och/eller ett namn.");
     }   
@@ -90,10 +104,12 @@ function isValidInput(url, name) {
 
 // displayLink skapar och visar en länk i DOM baserat på URL och namn
 function displayLink(url, name) {
+    const faviconUrl = getFavicon(url); // Hämtar favicon URL
     const linkElement = document.createElement('div');
     linkElement.classList.add('link');
     linkElement.innerHTML = `
     <li class="listElement">
+        <img src="${faviconUrl}" alt="Favicon" class="favicon">
         <a href="${url}" target="_blank">${name}</a>
         <span class="close material-symbols-outlined md-15" data-id="${url}" id="deleteBtn">do_not_disturb_on</span>
     </li>

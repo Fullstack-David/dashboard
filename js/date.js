@@ -1,7 +1,8 @@
-// hämtar referense från DOM
+// hämtar referense från DOM / date.js
 const timeDate = document.querySelector('.time-date');
 const date = document.querySelector('.date');
 const time = document.querySelector('.time');
+
 
 // skapar en function för tiden (lokal time)
 function setTime() {    

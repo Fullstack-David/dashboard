@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.backgroundImage = `url(${setDefaultBackgroundUrl})`
     }
 
-
     // Funktion för att hämta bakgrundsbild från en API och sätta den som webbsidans bakgrund.
     function fetchAndSetBackground() {
     

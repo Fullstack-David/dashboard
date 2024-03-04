@@ -1,3 +1,6 @@
+// Hämtar referensen till DOM-elementet/ weather.js
+const weatherReport = document.querySelector('.weather-report');
+
 // Hämta användarens geografiska position
 navigator.geolocation.getCurrentPosition(function (position) {
     
@@ -7,9 +10,6 @@ navigator.geolocation.getCurrentPosition(function (position) {
     displayWeather(lat ,lon)
     
 });
-
-// Hämtar referensen till DOM-elementet
-const weatherReport = document.querySelector('.weather-report');
 
 // Funktion för att visa väderinformation baserat på givna koordinater
 function displayWeather(lat, lon) {

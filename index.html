@@ -78,7 +78,12 @@
           Add a new link
         </button>
         <div class="input-container hide">
-          <input type="text" class="url-input hide" placeholder="Enter URL" />
+          <input
+            type="text"
+            id="urlInput"
+            class="url-input hide"
+            placeholder="Enter URL"
+          />
           <input type="text" class="url-name hide" placeholder="Enter name" />
         </div>
       </div>
@@ -107,13 +112,14 @@
     </div>
 
     <!-- Länk till mina js-filer  -->
-    <script src="./js/date.js"></script>
-    <script src="./js/name.js"></script>
-    <script src="./js/links.js"></script>
-    <script src="./js/weather.js"></script>
-    <script src="./js/my-api.js"></script>
-    <script src="./js/notes.js"></script>
-    <script src="./js/background.js"></script>
+    <!-- <script type="module" src="./js/globalVaribles.js"></script> -->
+    <script type="module" src="./js/date.js"></script>
+    <script type="module" src="./js/name.js"></script>
+    <script type="module" src="./js/quickLinks.js"></script>
+    <script type="module" src="./js/weather.js"></script>
+    <script type="module" src="./js/my-api.js"></script>
+    <script type="module" src="./js/notes.js"></script>
+    <script type="module" src="./js/background.js"></script>
     <!--<script src="./js/test.js"></script>-->
   </body>
 </html>

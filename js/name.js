@@ -1,3 +1,4 @@
+// name.js
 const nameInput = document.querySelector('.name-input');
 
 // skapar en eventListener 
